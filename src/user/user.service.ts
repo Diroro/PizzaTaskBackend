@@ -19,10 +19,12 @@ export class UserService {
   }
 
   async findByEmail(email: string): Promise<User | undefined> {
-    return this.userRepository
-      .createQueryBuilder('user')
-      .where('user.email = :email', {email})
-      .getOne();
+    return this.userRepository.findOne({
+      select: ['email', 'hashedPassword', 'address', 'phoneNumber', 'firstName', 'lastName', 'id'],
+      where: {
+        email,
+      },
+    });
   }
 
   async saveUser(user: User): Promise<User> {
