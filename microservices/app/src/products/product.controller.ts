@@ -1,7 +1,7 @@
 import {Controller, Post, Body, Get, Delete, Param, BadRequestException} from '@nestjs/common';
 import {ProductService} from './product.service';
 import {Product} from './product.entity';
-import {CreateProductDto, DeleteProductParams} from './product.tDTO';
+import {CreateProductDto, DeleteProductParams} from './product.DTO';
 
 @Controller('products')
 export class ProductController {

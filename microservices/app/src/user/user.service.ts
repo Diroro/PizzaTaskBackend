@@ -14,11 +14,11 @@ export class UserService {
     return this.userRepository.find();
   }
 
-  async findOne(id: number): Promise<User | undefined> {
-    return this.userRepository.findOne(id);
+  async findOne(id: number): Promise<User | null> {
+    return this.userRepository.findOneBy({id});
   }
 
-  async findByEmail(email: string): Promise<User | undefined> {
+  async findByEmail(email: string): Promise<User | null> {
     return this.userRepository.findOne({
       select: ['email', 'hashedPassword', 'address', 'phoneNumber', 'firstName', 'lastName', 'id'],
       where: {

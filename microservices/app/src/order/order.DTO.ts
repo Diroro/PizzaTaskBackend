@@ -7,7 +7,7 @@ import {
   ValidateNested,
   IsEnum,
 } from 'class-validator';
-import {CreateProductDto} from '../products/product.tDTO';
+import {CreateProductDto} from '../products/product.DTO';
 import {ProductType} from '../products/product.entity';
 
 export class ProductDTO {

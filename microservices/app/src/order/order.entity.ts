@@ -62,7 +62,7 @@ export class Order implements IOrder {
   @Column('float')
   totalPriceEUR: number;
 
-  @Column('datetime')
+  @Column('date')
   orderDate: Date;
 }
 
